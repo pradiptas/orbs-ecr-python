@@ -15,10 +15,7 @@ jobs:
             pip install --user --upgrade setuptools
             pip install --user --upgrade pip==18.0.0
             pip install --user --no-cache-dir -r requirements.txt            
-      - run:
-          name: Run Tests
-          command: |
-            python test_hello_world.py
+      
   docker_hub_build_push_image:
     docker:
       - image: circleci/python:2.7.14
