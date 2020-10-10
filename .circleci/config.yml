@@ -46,7 +46,7 @@ workflows:
       - aws-ecr/build_and_push_image:
           region: AWS_REGION
           account-url: AWS_ECR_ACCOUNT_URL
-          repo: 272603463567.dkr.ecr.us-west-2.amazonaws.com/orbs-ecr-python
+          repo: ${CIRCLE_PROJECT_REPONAME}
           tag: ${CIRCLE_BUILD_NUM}
           requires:
             - build_test
