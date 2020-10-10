@@ -54,6 +54,6 @@ workflows:
       - aws-ecs/deploy-service-update:
           requires:
             - aws-ecr/build_and_push_image
-          #family: '${MY_APP_PREFIX}-service'
+          family: 'orb-ecs-python-service'
           cluster-name: 'orb-ecs-python-cluster'
           container-image-name-updates: 'container=circleci-orb-ecs-service,tag=circleci-orb'
