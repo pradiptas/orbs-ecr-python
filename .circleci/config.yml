@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   aws-ecr: circleci/aws-ecr@4.0.1
-  aws-ecs: circleci/aws-ecs@0.0.10
+  #aws-ecs: circleci/aws-ecs@0.0.10
 
 jobs:
   build_test:
@@ -51,7 +51,7 @@ workflows:
           tag: ${CIRCLE_BUILD_NUM}
           requires:
             - build_test
-      - aws-ecs/deploy-service-update:
-          family: '${MY_APP_PREFIX}-service'
-          cluster-name: '${MY_APP_PREFIX}-cluster'
-          container-image-name-updates: 'container=${MY_APP_PREFIX}-service,tag=${CIRCLE_SHA1}'
+      # - aws-ecs/deploy-service-update:
+      #     family: '${MY_APP_PREFIX}-service'
+      #     cluster-name: '${MY_APP_PREFIX}-cluster'
+      #     container-image-name-updates: 'container=${MY_APP_PREFIX}-service,tag=${CIRCLE_SHA1}'
